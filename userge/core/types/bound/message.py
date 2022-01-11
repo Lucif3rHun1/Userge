@@ -226,10 +226,7 @@ class Message(RawMessage):
             reply (``bool``):
                 reply msg if True, else edit
         """
-        if reply:
-            func = self.reply
-        else:
-            func = self.edit
+        func = self.reply if reply else self.edit
         await func("`Process Canceled!`", del_in=5)
 
     async def send_as_file(self,

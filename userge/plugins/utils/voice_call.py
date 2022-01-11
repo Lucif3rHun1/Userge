@@ -240,8 +240,12 @@ async def toggle_vc(msg: Message):
         upsert=True
     )
 
-    text = "**Enabled**" if CMDS_FOR_ALL else "**Disabled**"
-    text += " commands Successfully"
+
+    text = (
+        "**Enabled**" if CMDS_FOR_ALL else "**Disabled**"
+    ) + " commands Successfully"
+
+
     await reply_text(msg, text, del_in=5)
 
 
@@ -592,9 +596,7 @@ async def yt_down(msg: Message):
             return None
         replied = msg.reply_to_message
         if replied and msg.client.id == msg.from_user.id:
-            if not replied.from_user:
-                return None
-            return replied.from_user.mention
+            return None if not replied.from_user else replied.from_user.mention
         return msg.from_user.mention
 
     BACK_BUTTON_TEXT = (

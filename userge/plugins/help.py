@@ -207,10 +207,7 @@ if userge.has_bot:
         if not userge.dual_mode:
             return await callback_query.answer(
                 "you using [BOT MODE], can't change client.", show_alert=True)
-        if Config.USE_USER_FOR_CLIENT_CHECKS:
-            Config.USE_USER_FOR_CLIENT_CHECKS = False
-        else:
-            Config.USE_USER_FOR_CLIENT_CHECKS = True
+        Config.USE_USER_FOR_CLIENT_CHECKS = not Config.USE_USER_FOR_CLIENT_CHECKS
         await SAVED_SETTINGS.update_one({'_id': 'CURRENT_CLIENT'},
                                         {"$set": {'is_user': Config.USE_USER_FOR_CLIENT_CHECKS}},
                                         upsert=True)

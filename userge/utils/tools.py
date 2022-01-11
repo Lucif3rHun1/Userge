@@ -212,11 +212,4 @@ def is_command(cmd: str) -> bool:
     key = userge.Config.CMD_TRIGGER + cmd
     _key = userge.Config.SUDO_TRIGGER + cmd
 
-    is_cmd = False
-    if cmd in commands:
-        is_cmd = True
-    elif key in commands:
-        is_cmd = True
-    elif _key in commands:
-        is_cmd = True
-    return is_cmd
+    return cmd in commands or key in commands or _key in commands
