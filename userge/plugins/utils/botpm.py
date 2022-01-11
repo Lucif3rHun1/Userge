@@ -522,7 +522,7 @@ Type /send to confirm or /cancel to exit.
         IN_CONVO = True
         temp_msgs = []
         async with userge.bot.conversation(
-                msg.chat.id, timeout=30, limit=7) as conv:  # 5 post msgs and 2 command msgs
+                    msg.chat.id, timeout=30, limit=7) as conv:  # 5 post msgs and 2 command msgs
             await conv.send_message(MESSAGE)
             filter_ = filters.create(lambda _, __, ___: filters.incoming & ~filters.edited)
             while True:
@@ -530,9 +530,9 @@ Type /send to confirm or /cancel to exit.
                 if response.text and response.text.startswith("/cancel"):
                     IN_CONVO = False
                     return await msg.reply("Broadcast process Cancelled.")
-                if len(temp_msgs) >= 1 and response.text == "/done":
+                if temp_msgs and response.text == "/done":
                     break
-                if len(temp_msgs) >= 1 and response.text == "/preview":
+                if temp_msgs and response.text == "/preview":
                     conv._count -= 1
                     for i in temp_msgs:
                         if i.poll:
