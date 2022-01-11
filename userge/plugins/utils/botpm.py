@@ -128,10 +128,9 @@ if userge.has_bot:
             copy_ = "https://github.com/UsergeTeam/Userge/blob/master/LICENSE"
             markup = InlineKeyboardMarkup([
                 [
-                    InlineKeyboardButton(text="👥 UsergeTeam", url="https://github.com/UsergeTeam"),
-                    InlineKeyboardButton(text="🧪 Repo", url=Config.UPSTREAM_REPO)
+                    InlineKeyboardButton(text="Channel", url="https://t.me/+kLmpPLaXII00ZmQ0"),
+                    InlineKeyboardButton(text="Chat", url="https://t.me/+005ev9_E6Us1ZDQ1")
                 ],
-                [InlineKeyboardButton(text="🎖 GNU GPL v3.0", url=copy_
             ])
             await send_start_text(msg, text, path, markup)
             return
