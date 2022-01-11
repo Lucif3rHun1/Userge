@@ -131,7 +131,7 @@ if userge.has_bot:
                     InlineKeyboardButton(text="👥 UsergeTeam", url="https://github.com/UsergeTeam"),
                     InlineKeyboardButton(text="🧪 Repo", url=Config.UPSTREAM_REPO)
                 ],
-                [InlineKeyboardButton(text="🎖 GNU GPL v3.0", url=copy_)]
+                [InlineKeyboardButton(text="🎖 GNU GPL v3.0", url=copy_
             ])
             await send_start_text(msg, text, path, markup)
             return
