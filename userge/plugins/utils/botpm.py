@@ -158,7 +158,7 @@ if userge.has_bot:
             )
             await msg.reply("Custom Bot Pm text Saved Successfully.")
 
-    @bot.on_message(filters.user(userge_id) & filters.private & filters.command("pmban"), group=1)
+    @bot.on_message(filters.user(userge_id) & filters.private & filters.command("ban"), group=1)
     async def pm_ban(_, msg: PyroMessage):
         replied = msg.reply_to_message
         user_id = msg.text.split(' ', maxsplit=1)[1] if ' ' in msg.text else ''
