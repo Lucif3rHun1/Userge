@@ -88,7 +88,7 @@ async def kang_(message: Message):
             if _saved and _saved != emoji_:
                 emoji_ = emoji_[len(_saved):]
         if not emoji_:
-            emoji_ = "🤔"
+            emoji_ = "❤️"
 
         u_name = user.username
         if u_name:
