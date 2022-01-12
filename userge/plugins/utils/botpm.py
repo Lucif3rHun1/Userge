@@ -196,7 +196,7 @@ if userge.has_bot:
                 pass
 
     @bot.on_message(
-        filters.user(userge_id) & filters.private & filters.command("pmunban"), group=1)
+        filters.user(userge_id) & filters.private & filters.command("unban"), group=1)
     async def pm_unban(_, msg: PyroMessage):
         replied = msg.reply_to_message
         user_id = msg.text.split(' ', maxsplit=1)[1] if ' ' in msg.text else ''
